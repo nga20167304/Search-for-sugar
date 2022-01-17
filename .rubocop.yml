@@ -1,0 +1,37 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+# Common configuration.
+AllCops:
+  NewCops: enable
+  # Include gemspec and Rakefile
+  Include:
+    - "app/**/*"
+    - "lib/**/*"
+    - "*/.gemspec"
+    - "Gemfile"
+  Exclude:
+    - "vendor/**/*"
+    - "bin/*"
+    - "db/**/*"
+    - "spec/**/*"
+    - "config/**/*"
+    - "app/views/**/*"
+    - "app/assets/**/*"
+    - "app/javascript/**/*"
+    - ".idea/**/*"
+    - "**/.DS_Store"
+    - "**/.keep"
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '*/.rake'
+    - 'spec/**/*.rb'
