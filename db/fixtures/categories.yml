@@ -1,0 +1,62 @@
+category1:
+  name: 果実野菜
+
+category2:
+  name: 葉野菜
+
+category3:
+  name: 根野菜
+
+category4:
+  name: 果物
+
+category5:
+  name: きのこ類
+
+category6:
+  name: 山菜
+
+category7:
+  name: 香菜
+
+category8:
+  name: 白身魚
+
+category9:
+  name: 青魚
+
+category10:
+  name: 赤白身魚
+
+category11:
+  name: 海藻
+
+category12:
+  name: 貝類
+
+category13:
+  name: 甲殻類
+
+category14:
+  name: 卵・乳製品
+
+category15:
+  name: お肉
+
+category16:
+  name: 穀物
+
+category17:
+  name: 豆類
+
+category18:
+  name: ナッツ類
+
+category19:
+  name: 実
+
+category20:
+  name: 調味料
+
+category21:
+  name: 飲み物

@@ -14,8 +14,8 @@
         操作
       </div>
     </div>
-    <% if @foods.nil? %>
-      <%= @foods.each do |food| %>
+    <% if @foods %>
+      <% @foods.each do |food| %>
         <div class="row">
           <div class="cell" data-title="food-name">
             <%= food.name %>
@@ -24,7 +24,7 @@
             <%= food.amount_of_sugar %>
           </div>
           <div class="cell" data-title="category">
-            <%= food.category_id.name %>
+            <%= food.category.name %>
           </div>
           <div class="cell" data-title="action">
             <button>編集</button>
