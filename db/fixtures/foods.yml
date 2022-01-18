@@ -1,0 +1,109 @@
+food1:
+  name: パプリカ
+  amount_of_sugar: 10
+  category: category1
+
+food2:
+  name: ナス
+  amount_of_sugar: 3.5
+  category: category1
+
+food3:
+  name: トマト
+  amount_of_sugar: 2.6
+  category: category1
+
+food4:
+  name: かぼちゃ
+  amount_of_sugar: 2.8
+  category: category1
+
+food5:
+  name: ズッキーニ
+  amount_of_sugar: 2.5
+  category: category1
+
+food6:
+  name: ピーマン
+  amount_of_sugar: 2.8
+  category: category1
+
+food7:
+  name: きゅうり
+  amount_of_sugar: 2
+  category: category1
+
+food8:
+  name: とうもろこし
+  amount_of_sugar: 13.8
+  category: category1
+
+food9:
+  name: オクラ
+  amount_of_sugar: 1.5
+  category: category1
+
+food10:
+  name: かんぴょう
+  amount_of_sugar: 11.34
+  category: category1
+
+food11:
+  name: はやとうり
+  amount_of_sugar: 1.7
+  category: category1
+
+food12:
+  name: ミニトマト
+  amount_of_sugar: 4.6
+  category: category1
+
+food13:
+  name: とうがらし
+  amount_of_sugar: 5
+  category: category1
+
+food14:
+  name: とうがん
+  amount_of_sugar: 2.5
+  category: category1
+
+food15:
+  name: とんぶり
+  amount_of_sugar: 5.8
+  category: category1
+
+food16:
+  name: まくわうり
+  amount_of_sugar: 6.8
+  category: category1
+
+food17:
+  name: にがうり
+  amount_of_sugar: 1
+  category: category1
+
+food18:
+  name: しろうり
+  amount_of_sugar: 2.1
+  category: category1
+
+food19:
+  name: あかうり
+  amount_of_sugar: 2.1
+  category: category1
+
+food20:
+  name: ゆうがお
+  amount_of_sugar: 2.7
+  category: category1
+
+food21:
+  name: ししとうがらし
+  amount_of_sugar: 2.1
+  category: category1
+
+food22:
+  name: アイコ
+  amount_of_sugar: 2.8
+  category: category1
