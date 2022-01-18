@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <div class="table">
+    <div class="row header blue">
+      <div class="cell">
+        名前
+      </div>
+      <div class="cell">
+        糖質
+      </div>
+      <div class="cell">
+        種類
+      </div>
+      <div class="cell">
+        操作
+      </div>
+    </div>
+    <% if @foods.nil? %>
+      <%= @foods.each do |food| %>
+        <div class="row">
+          <div class="cell" data-title="food-name">
+            <%= food.name %>
+          </div>
+          <div class="cell" data-title="amount-of-sugar">
+            <%= food.amount_of_sugar %>
+          </div>
+          <div class="cell" data-title="category">
+            <%= food.category_id.name %>
+          </div>
+          <div class="cell" data-title="action">
+            <button>編集</button>
+            <button>削除</button>
+          </div>
+        </div>
+      <% end%>
+    <% end %>
+  </div>
+</div>
