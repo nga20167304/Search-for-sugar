@@ -1,5 +1,6 @@
 class FoodsController < ApplicationController
   def index
-    @foods = Food.all.order(created_at: :desc)
+    @q = Food.ransack(params[:q])
+    @foods = @q.result.order(created_at: :desc)
   end
 end

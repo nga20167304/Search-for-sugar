@@ -1,3 +1,11 @@
+<div class="search">
+  <%= search_form_for @q do |f| %>
+    <%= f.search_field :name_cont %>
+
+    <%= f.submit "検索" %>
+  <% end %>
+</div>
+
 <div class="wrapper">
   <div class="table">
     <div class="row header blue">
@@ -14,24 +22,7 @@
         操作
       </div>
     </div>
-    <% if @foods %>
-      <% @foods.each do |food| %>
-        <div class="row">
-          <div class="cell" data-title="food-name">
-            <%= food.name %>
-          </div>
-          <div class="cell" data-title="amount-of-sugar">
-            <%= food.amount_of_sugar %>
-          </div>
-          <div class="cell" data-title="category">
-            <%= food.category.name %>
-          </div>
-          <div class="cell" data-title="action">
-            <button>編集</button>
-            <button>削除</button>
-          </div>
-        </div>
-      <% end%>
-    <% end %>
+    <div id="js-foods">
+    </div>
   </div>
 </div>
