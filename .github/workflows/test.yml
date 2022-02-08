@@ -24,9 +24,9 @@ jobs:
           bundle-cache: true
       - name: Install dependencies
         run: bundle install
+      - name: Rubocop
+        run: rubocop
       - name: Install webpack
         run: rails webpacker:install
       - name: Run tests
         run: rspec ./spec
-      - name: rubocop
-        run: rubocop
