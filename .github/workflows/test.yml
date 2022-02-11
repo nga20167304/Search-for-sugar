@@ -30,5 +30,3 @@ jobs:
         run: rails webpacker:install
       - name: Run tests
         run: rspec ./spec
-        env:
-          CAPYBARA_JAVASCRIPT_DRIVER: chrome_headless
