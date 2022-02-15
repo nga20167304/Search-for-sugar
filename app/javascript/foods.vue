@@ -1,6 +1,6 @@
 <template lang="pug">
   <tr v-for='food in foods' :id='"food_" + food.id'>
-    <Food :food='food' @delete='deleteFood', @update='updateFood'/>
+    <Food :food='food' @delete='deleteFood' @update='updateFood'/>
   </tr>
 </template>
 <script>
