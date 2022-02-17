@@ -49,12 +49,13 @@ export default {
     editFood() {
       this.editing = !this.editing
     },
-    updateFood(name, amount_of_sugar, id) {
+    updateFood(name, amount_of_sugar, category_id, id) {
       const updatedFood = this.foods.find((food) => {
         return food.id === id
       })
       updatedFood.name = name
       updatedFood.amount_of_sugar = amount_of_sugar
+      updatedFood.category_id = category_id
     },
     deleteFood: function(id) {
       fetch(`/foods/${id}.json`, {
