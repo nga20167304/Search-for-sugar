@@ -9,7 +9,7 @@
     </td>
     <td class="cell" data-title="category">
       <select id="select-category" v-model="food.category_name" v-select2 v-if="editing">
-        <option v-for='category in categories' :selected='category.name' :key='category.id' :value='category.id'>
+        <option v-for='category in categories' :selected='category.name' :key='category.id' :value='category.name'>
           {{ category.name }}
         </option>
       </select>
@@ -56,13 +56,16 @@ export default {
       }
     },
     updateFood: function() {
-      const update_element = document.querySelectorAll(`#food_${this.food.id} > td.cell > input`)
-      const selectTag = document.getElementById('select-category')
+      const updateElement = document.querySelectorAll(`#food_${this.food.id} > td.cell > input`)
+      const selected = document.getElementById('select-category').value
+      const selectedCategory = this.categories.find((category) => {
+        return category.name === selected
+      })
       const params = {
         food: {
-          name: update_element[0].value,
-          amount_of_sugar: update_element[1].value,
-          category_id: selectTag.value
+          name: updateElement[0].value,
+          amount_of_sugar: updateElement[1].value,
+          category_id: selectedCategory.id
           }
         }
       fetch(`/foods/${this.food.id}.json`, {
