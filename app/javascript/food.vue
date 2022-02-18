@@ -8,7 +8,11 @@
       <span v-else>{{ food.amount_of_sugar }}</span>
     </td>
     <td class="cell" data-title="category">
-      <input v-model="food.category_name" v-if="editing"/>
+      <select id="select-category" v-model="food.category_name" v-select2 v-if="editing">
+        <option v-for='category in categories' :selected='category.name' :key='category.id' :value='category.name'>
+          {{ category.name }}
+        </option>
+      </select>
       <span v-else>{{ food.category_name }}</span>
     </td>
     <td class="cell" data-title="action">
@@ -22,10 +26,21 @@ export default {
   props: {
     food: { type: Object, required: true }
   },
+  directives: {
+    select2: {
+      mounted(el) {
+        el.select2
+      }
+    }
+  },
   data() {
     return {
-      editing: false
+      editing: false,
+      categories: ""
     }
+  },
+  created() {
+    this.getCategories()
   },
   methods: {
     token() {
@@ -41,11 +56,16 @@ export default {
       }
     },
     updateFood: function() {
-      const update_element = document.querySelectorAll(`#food_${this.food.id} > td.cell > input`)
+      const updateElement = document.querySelectorAll(`#food_${this.food.id} > td.cell > input`)
+      const selected = document.getElementById('select-category').value
+      const selectedCategory = this.categories.find((category) => {
+        return category.name === selected
+      })
       const params = {
         food: {
-          name: update_element[0].value,
-          amount_of_sugar: update_element[1].value
+          name: updateElement[0].value,
+          amount_of_sugar: updateElement[1].value,
+          category_id: selectedCategory.id
           }
         }
       fetch(`/foods/${this.food.id}.json`, {
@@ -58,12 +78,28 @@ export default {
         body: JSON.stringify(params)
       })
       .then(() => {
-        this.$emit('update', this.food.name, this.food.amount_of_sugar, this.food.id)
+        this.$emit('update', this.food.name, this.food.amount_of_sugar, this.food.category_id, this.food.id)
         this.editing = false
       })
         .catch((error) => {
           console.warn('Failed to parsing', error)
         })
+    },
+    getCategories() {
+      fetch(`/categories.json`, {
+      method: "GET",
+      })
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        if (json) {
+          this.categories = json
+        }
+      })
+      .catch((error) => {
+        console.warn("Failed to parsing", error);
+      });
     }
   }
 }
