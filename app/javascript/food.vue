@@ -1,25 +1,25 @@
 <template>
   <td class="cell" data-title="food-name">
-      <input v-model="food.name" v-if="editing"/>
-      <span v-else>{{ food.name }}</span>
-    </td>
-    <td class="cell" data-title="amount-of-sugar">
-      <input v-model="food.amount_of_sugar" v-if="editing"/>
-      <span v-else>{{ food.amount_of_sugar }}</span>
-    </td>
-    <td class="cell" data-title="category">
-      <select id="select-category" v-model="food.category_name" v-select2 v-if="editing">
-        <option v-for='category in categories' :selected='category.name' :key='category.id' :value='category.name'>
-          {{ category.name }}
-        </option>
-      </select>
-      <span v-else>{{ food.category_name }}</span>
-    </td>
-    <td class="cell" data-title="action">
-      <button v-show='!editing' @click='editFood'>編集</button>
-      <button v-show='editing' @click='updateFood'>保存する</button>
-      <button @click='deleteFood'>削除</button>
-    </td>
+    <input v-model="food.name" v-if="editing"/>
+    <span v-else>{{ food.name }}</span>
+  </td>
+  <td class="cell" data-title="amount-of-sugar">
+    <input v-model="food.amount_of_sugar" v-if="editing"/>
+    <span v-else>{{ food.amount_of_sugar }}</span>
+  </td>
+  <td class="cell" data-title="category">
+    <select id="select-category" v-model="food.category_name" v-select2 v-if="editing">
+      <option v-for='category in categories' :selected='category.name' :key='category.id' :value='category.name'>
+        {{ category.name }}
+      </option>
+    </select>
+    <span v-else>{{ food.category_name }}</span>
+  </td>
+  <td class="cell" data-title="action">
+    <button v-show='!editing' @click='editFood'>編集</button>
+    <button v-show='editing' @click='updateFood'>保存する</button>
+    <button @click='deleteFood'>削除</button>
+  </td>
 </template>
 <script>
 export default {
