@@ -1,6 +1,6 @@
 <template lang="pug">
   <tr v-for='food in foods' :id='"food_" + food.id'>
-    <Food :food='food' @delete='deleteFood', @update='updateFood'/>
+    <Food :food='food' @delete='deleteFood' @update='updateFood'/>
   </tr>
 </template>
 <script>
@@ -24,8 +24,13 @@ export default {
       return meta ? meta.getAttribute('content') : ''
     },
     getFoods() {
-      const search_name = document.querySelector("#q_name_cont");
-      fetch(`/foods.json?${encodeURI(search_name.name)}=${encodeURI(search_name.value)}`, {
+      const search_name = document.querySelector("#q_name_cont")
+      var url = ''
+      if(search_name === null)
+        url = `${window.location.pathname}.json`
+      else
+        url = `/foods.json?${encodeURI(search_name.name)}=${encodeURI(search_name.value)}`
+      fetch(url, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json; charset=utf-8',

@@ -4,8 +4,9 @@
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbar-primary-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">糖質を検索</a></li>
-          <li><a href="#">ホームページ</a></li>
+          <li><%= link_to "ホームページ", root_path %></li>
+          <li class="active"><%= link_to "糖質を検索", foods_path %></li>
+          <li><%= link_to "種類", categories_path %></li>
         </ul>
       </div>
     </div>

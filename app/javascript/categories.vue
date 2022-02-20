@@ -1,33 +1,35 @@
-<template>
+<template lang="pug">
   <div class="grid-item" v-for="category in categories">
-    <span> {{ category.name }} </span>
+    <span><a v-bind:href="'/categories/'+ category.id"> {{ category.name }} </a></span>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      categories: "",
+      categories: ""
     };
   },
   created() {
-    fetch(`/categories.json`, {
-      method: "GET",
-    })
-      .then((response) => {
-        return response.json();
+    this.getCategories()
+    },
+  methods: {
+    getCategories() {
+      fetch(`/categories.json`, {
+        method: "GET",
       })
-      .then((json) => {
-        if (json) {
-          this.categories = json
-        }
-      })
-      .catch((error) => {
-        console.warn("Failed to parsing", error);
-      });
+        .then((response) => {
+          return response.json();
+        })
+        .then((json) => {
+          if (json) {
+            this.categories = json
+          }
+        })
+        .catch((error) => {
+          console.warn("Failed to parsing", error);
+        });
+      }
     }
   }
 </script>
-<style scoped>
-
-</style>
