@@ -24,7 +24,11 @@ jobs:
           bundle-cache: true
       - name: Install dependencies
         run: bundle install
-      - name: Run tests
-        run: bundle exec rails test:all
-      - name: rubocop
+      - name: Rubocop
         run: rubocop
+      - name: Install webpack
+        run: rails webpacker:install
+      - name: Install Chromium-chromedriver
+        run: sudo apt-get -yqq install chromium-chromedriver
+      - name: Run tests
+        run: rspec ./spec
