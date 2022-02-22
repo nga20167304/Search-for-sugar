@@ -34,7 +34,7 @@ export default {
       foods: "",
       editing: false,
       totalPages: 0,
-      currentPage: this.getCurrentPage(),
+      currentPage: this.getCurrentPage()
     };
   },
   computed: {
@@ -44,7 +44,7 @@ export default {
       if(search_name === null)
         url = `${window.location.pathname}.json?page=${this.currentPage}`
       else
-        url = `/foods.json?page=${this.currentPage}?${encodeURI(search_name.name)}=${encodeURI(search_name.value)}`
+        url = `/foods.json?${encodeURI(search_name.name)}=${encodeURI(search_name.value)}&page=${this.currentPage}`
       return url
     },
     pagerProps() {
