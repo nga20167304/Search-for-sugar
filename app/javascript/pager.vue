@@ -4,8 +4,8 @@
     :page-range='pageRange'
     :margin-pages="2"
     :click-handler="clickHandle"
-    :prev-text="'Previous'"
-    :next-text="'Next'"
+    :prev-text="'前'"
+    :next-text="'後'"
     container-class='pagination'
     page-class='page-item'
     page-link-class='page-link'
