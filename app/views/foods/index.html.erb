@@ -1,10 +1,12 @@
+<div class="note">
+  <p>食材の100gあたりの糖質量を調べることができます。</p>
+</div>
 <div class="search">
   <%= search_form_for @q do |f| %>
-    <%= f.search_field :name_cont %>
+    <%= f.search_field :name_cont, :placeholder => 'トマト' %>
 
     <%= f.submit "検索" %>
   <% end %>
-  <p class="note">＊検索結果が100gあたり</p>
 </div>
 
 <%= render "shared/food" %>
