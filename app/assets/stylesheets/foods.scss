@@ -86,8 +86,29 @@ body {
 .search {
   display: flex;
   justify-content: center;
+  input {
+    height: 35px;
+    border-radius: 5px;
+    margin: 10px;
+  }
+  input[type="submit"] {
+    border: 1px solid #5885AF;
+    background-color: #C3E0E5;
+    width: 70px;
+  }
+  #q_name_cont {
+    border: 1px solid #d1d1d1;
+    width: 400px;
+  }
 }
 
 .note {
-  margin-left: 50px;
+  margin-right: 30px;
+  text-align: center;
+}
+
+.search-with-category {
+  margin-left: 130px;
+  text-align: center;
+  margin-top: 10px;
 }
