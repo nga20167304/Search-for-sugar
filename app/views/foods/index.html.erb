@@ -1,3 +1,10 @@
 <% if @foods != nil %>
-  <%= render "shared/food" %>
+  <%= render "layouts/search_header" %>
+  <% if @foods.count == 0 %>
+    <p>申し訳ありません。</p>
+  <% else %>
+    <%= render "shared/food" %>
+  <% end %>
+<% else %>
+  <%= render "layouts/header" %>
 <% end %>
