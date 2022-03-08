@@ -1,0 +1,57 @@
+.header-search, .header-title, .header-search-with-category {
+  display: inline-block;
+  margin: 10px;
+}
+
+.header-title {
+  h1 {
+    color: #078F9B;
+  }
+}
+
+.header-search {
+  justify-content: center;
+  input {
+    height: 35px;
+    border-radius: 5px;
+    margin: 10px;
+  }
+  input[type="submit"] {
+    border: 1px solid #5885AF;
+    background-color: #C3E0E5;
+    width: 70px;
+  }
+  #q_name_cont {
+    border: 1px solid #d1d1d1;
+    width: 400px;
+  }
+}
+
+.category, .food-name, .amount-of-sugar, .action {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.category {
+  background-color: #C3E0E5;
+  color: #5885AF;
+  padding: 5px;
+}
+
+.food-name, .amount-of-sugar {
+  font-size: 20px;
+}
+
+.amount-of-sugar {
+  color: red;
+  p {
+    display: inline-block;
+    color: gray;
+    font-size: 14px;
+  }
+}
+
+hr {
+  width: 50%;
+  margin-left: 0px;
+}

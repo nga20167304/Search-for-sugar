@@ -1,20 +1,10 @@
 <template lang="pug">
   <div class="wrapper">
-    <table class="table">
-      <thead>
-        <tr class="row header blue">
-          <th class="cell">名前</th>
-          <th class="cell">糖質</th>
-          <th class="cell">種類</th>
-          <th class="cell">操作</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for='food in foods' :id='"food_" + food.id'>
-          <Food :food='food' @delete='deleteFood' @update='updateFood'/>
-        </tr>
-      </tbody>
-    </table>
+    <p class="result">「{{this.searchParams}}」の検索結果</p>
+    <div v-for='food in foods' :id='"food_" + food.id'>
+      <Food :food='food' @delete='deleteFood' @update='updateFood'/>
+      <hr>
+    </div>
 
     <nav class="page-pagination" v-if='totalPages > 1'>
       <Pager v-bind='pagerProps'/>
@@ -54,6 +44,10 @@ export default {
         pageRange: 5,
         clickHandle: this.paginateClickCallback
       }
+    },
+    searchParams() {
+      const search_name = document.querySelector("#q_name_cont")
+      return search_name.value
     }
   },
   created() {

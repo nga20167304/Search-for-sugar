@@ -12,7 +12,8 @@ body {
 
   .wrapper {
     margin: 0 auto;
-    padding: 40px;
+    padding-top: 40px;
+    padding-left: 350px;
     max-width: 800px;
   }
 
@@ -71,16 +72,6 @@ body {
       }
     }
   }
-
-  .cell {
-    padding: 6px 12px;
-    display: table-cell;
-
-    @media screen and (max-width: 580px) {
-      padding: 2px 16px;
-      display: block
-    }
-  }
 }
 
 .search {
@@ -111,4 +102,10 @@ body {
   margin-left: 130px;
   text-align: center;
   margin-top: 10px;
+}
+
+.result {
+  font-size: 30px;
+  margin-left: 50px;
+  margin-bottom: 50px;
 }
