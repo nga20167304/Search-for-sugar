@@ -2,7 +2,7 @@
   <div class="wrapper">
     <p class="result">「{{this.searchParams}}」の検索結果</p>
     <div v-for='food in foods' :id='"food_" + food.id'>
-      <Food :food='food' @delete='deleteFood' @update='updateFood'/>
+      <Food :food='food'/>
       <hr>
     </div>
 
@@ -22,7 +22,6 @@ export default {
   data() {
     return {
       foods: "",
-      editing: false,
       totalPages: 0,
       currentPage: this.getCurrentPage()
     };
@@ -85,37 +84,6 @@ export default {
           console.warn("Failed to parsing", error);
         });
       },
-    editFood() {
-      this.editing = !this.editing
-    },
-    updateFood(name, amount_of_sugar, category_id, id) {
-      const updatedFood = this.foods.find((food) => {
-        return food.id === id
-      })
-      updatedFood.name = name
-      updatedFood.amount_of_sugar = amount_of_sugar
-      updatedFood.category_id = category_id
-    },
-    deleteFood: function(id) {
-      fetch(`/foods/${id}.json`, {
-        method: 'DELETE',
-        headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-        'X-Requested-With': 'XMLHttpRequest',
-        'X-CSRF-Token': this.token()
-        }
-      })
-      .then(() => {
-        this.foods.forEach((food, i) => {
-          if (food.id === id) {
-            this.foods.splice(i, 1)
-          }
-        })
-      })
-      .catch((error) => {
-        console.warn('Failed to parsing', error)
-      })
-    },
     getCurrentPage() {
       const params = new URLSearchParams(location.search)
       const page = params.get('page')
